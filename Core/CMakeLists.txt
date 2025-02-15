@@ -13,7 +13,7 @@ message(STATUS "Compiling under ${CMAKE_SYSTEM_NAME}")
 
 find_package(CURL REQUIRED)
 find_package(TinyXML2 REQUIRED)
-find_package(SQLITE3 REQUIRED)
+#find_package(SQLITE3 REQUIRED)
 find_package(SDL2 REQUIRED)
 find_package(SDL2_mixer REQUIRED)
 find_package(SDL2_image REQUIRED)
