@@ -21,7 +21,7 @@ find_package(SDL2_gfx REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 find_package(FMT REQUIRED)
 find_package(tinyxml2 REQUIRED)
-find_package(gettext REQUIRED)
+find_package(Gettext REQUIRED)
 
 #include(${CMAKE_CURRENT_SOURCE_DIR}/conan_toolchain.cmake)
 

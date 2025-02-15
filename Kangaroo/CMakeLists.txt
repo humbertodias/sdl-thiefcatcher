@@ -13,7 +13,7 @@ find_package(SDL2_mixer REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_gfx REQUIRED)
 find_package(SDL2_gfx REQUIRED)
-find_package(gettext REQUIRED)
+find_package(Gettext REQUIRED)
 # TODO: should be dynamic
 set(GETTEXT_INCLUDE_DIR "/opt/homebrew/Cellar/gettext/0.23.1/include")
 set(GETTEXT_LIBRARY_DIR "/opt/homebrew/Cellar/gettext/0.23.1/lib")
