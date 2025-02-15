@@ -23,7 +23,7 @@ find_package(SDL2_ttf REQUIRED)
 #find_package(tinyxml2 REQUIRED)
 #find_package(Gettext REQUIRED)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/conan_toolchain.cmake)
+#include(${CMAKE_CURRENT_SOURCE_DIR}/conan_toolchain.cmake)
 
 file(GLOB_RECURSE GAME_SOURCES "src/*.cpp" )
 file(GLOB_RECURSE VENDOR_SOURCES "vendor/*.cpp" "vendor/*.cc" )
