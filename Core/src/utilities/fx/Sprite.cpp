@@ -9,7 +9,7 @@ Sprite::Sprite(const char *fileName, const int numFrames_, const Dimension &fram
 
     for (int i = 0; i <= numFrames; i++) {
         char path[100] = {};
-        sprintf(path, fileName, i);
+        snprintf(path,sizeof(path), fileName, i);
         frames[i] = new Texture(renderer->internal, path);
     }
 }

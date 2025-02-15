@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-#include <SDL.h>
+// #include <SDL.h>
 
 MediaSound::MediaSound() {
 	sound = nullptr;

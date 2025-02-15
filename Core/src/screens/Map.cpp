@@ -132,7 +132,7 @@ void Map::drawBackgroundElements()
 	currentLocationFont.setColor(Color(255, 220, 220));
 
 	char temp[200] = {};
-	sprintf(temp, _("You are in %s.").c_str(), sourceCountry->getName().c_str());
+	snprintf(temp, sizeof(temp), _("You are in %s.").c_str(), sourceCountry->getName().c_str());
 	Text currentLocationText(temp, &currentLocationFont);
 	renderer->drawText(&currentLocationText, Point(50, 20));
 

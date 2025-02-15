@@ -70,11 +70,11 @@ PlayerCase *AssignmentScreen::show() {
 
     char l[100] = {};
 
-    sprintf(l, _("You has been identified, %s.").c_str(), player->getName().c_str());
+    snprintf(l, sizeof(l),  _("You has been identified, %s.").c_str(), player->getName().c_str());
     addLine(l);
 
     memset(l, '\0', 100);
-    sprintf(l, _("Your current rank is: %s.").c_str(), player->getRank().c_str());
+    snprintf(l, sizeof(l),  _("Your current rank is: %s.").c_str(), player->getRank().c_str());
 
     addLine(l);
 
@@ -87,23 +87,22 @@ PlayerCase *AssignmentScreen::show() {
 
     char line[500] = {};
 
-    sprintf(line, _("National treasure stolen in %s.").c_str(),
+    snprintf(line, sizeof(line), _("National treasure stolen in %s.").c_str(),
             playerCase->currentCountry.getName().c_str());
     addLine(line);
 
     memset(line, '\0', 500);
-    sprintf(line, _("The loot has been identified as %s.").c_str(),
+    snprintf(line, sizeof(line), _("The loot has been identified as %s.").c_str(),
             playerCase->getStolenObject().c_str());
     addLine(line);
 
     memset(line, '\0', 500);
-    sprintf(line, _("A %s suspect was seen at the crime scene.").c_str(),
+    snprintf(line, sizeof(line), _("A %s suspect was seen at the crime scene.").c_str(),
             GenreFormatter::format(playerCase->getCriminal().getGenre()).c_str());
     addLine(line);
 
     memset(line, '\0', 500);
-    sprintf(
-            line,
+    snprintf(line, sizeof(line),
             _("Your mission is to pursue the thief from %s to its hideout and arrest %s!").c_str(),
             playerCase->currentCountry.getName().c_str(),
             GenreFormatter::formatObjectPronoun(playerCase->getCriminal().getGenre()).c_str()
@@ -111,14 +110,17 @@ PlayerCase *AssignmentScreen::show() {
     addLine(line);
 
     memset(line, '\0', 500);
-    sprintf(line, _("You have to arrest the thief before %s.").c_str(),
-            playerCase->endDate->toString("%A %d, %H:%M").c_str());
+    // sprintf(line, _("You have to arrest the thief before %s.").c_str(),
+    //         playerCase->endDate->toString("%A %d, %H:%M").c_str());
+    snprintf(line, sizeof(line), _("You have to arrest the thief before %s.").c_str(),
+    playerCase->endDate->toString("%A %d, %H:%M").c_str());
     addLine(line);
 
     addLine(" ");
 
     memset(line, '\0', 500);
-    sprintf(line, _("Good luck, %s %s.").c_str(), player->getRank().c_str(), player->getName().c_str());
+    // sprintf(line, _("Good luck, %s %s.").c_str(), player->getRank().c_str(), player->getName().c_str());
+    snprintf(line, sizeof(line),_("Good luck, %s %s.").c_str(), player->getRank().c_str(), player->getName().c_str());
     addLine(line);
 
     showLines();
