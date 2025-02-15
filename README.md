@@ -36,7 +36,8 @@ make
 
 If you want to build with debug symbols use:
 ```
-cmake -DCMAKE_BUILD_TYPE=debug .
+cmake -DCMAKE_BUILD_TYPE=debug -Bbuild .
+cmake --build build
 ```
 
 ## How to run
