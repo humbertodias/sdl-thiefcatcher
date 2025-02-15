@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
 # - find Sqlite 3
 # SQLITE3_INCLUDE_DIR - Where to find Sqlite 3 header files (directory)
 # SQLITE3_LIBRARIES - Sqlite 3 libraries
