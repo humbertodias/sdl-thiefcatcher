@@ -13,7 +13,7 @@ Dependencies:
 * curl
 
 Cloning the code:
-```
+```shell
 git clone git@github.com:Ponup/thiefcatcher.git
 git submodule update --init
 ```
@@ -35,7 +35,7 @@ make
 ```
 
 If you want to build with debug symbols use:
-```
+```shell
 cmake -DCMAKE_BUILD_TYPE=debug -Bbuild .
 cmake --build build
 ```
