@@ -35,8 +35,11 @@ configure_file(
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/Version.hpp"
 )
 
-set(KANGOROO_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../Kangaroo/include")
-set(KANGOROO_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../Kangaroo/src")
+set(KANGOROO_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../Kangaroo")
+set(KANGOROO_LIBRARY_DIR "${KANGOROO_DIR}")
+set(KANGOROO_INCLUDE_DIR "${KANGOROO_DIR}/include")
+set(KANGOROO_SRC_DIR "${KANGOROO_DIR}/src")
+message("KANGOROO_DIR: ${KANGOROO_DIR}")
 message("KANGOROO_INCLUDE_DIR: ${KANGOROO_INCLUDE_DIR}")
 message("KANGOROO_SRC_DIR: ${KANGOROO_SRC_DIR}")
 
@@ -55,15 +58,15 @@ set_property(TARGET ThiefCatcher PROPERTY CXX_STANDARD 23)
 target_include_directories(ThiefCatcher PRIVATE "src/" "vendor/" "/usr/local/include/" ${CMAKE_INCLUDE_PATH} ${FMT_INCLUDE_DIR} ${TINYXML2_INCLUDE_DIR} ${GETTEXT_INCLUDE_DIR} ${KANGOROO_INCLUDE_DIR})
 
 if(WIN32)
-	target_link_libraries(ThiefCatcher PUBLIC kangaroo PRIVATE sqlite3 curl SDL2main SDL2 SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf tinyxml2 libintl)
+	target_link_libraries(ThiefCatcher PUBLIC ${KANGOROO_LIBRARY_DIR} kangaroo PRIVATE sqlite3 curl SDL2main SDL2 SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf tinyxml2 libintl)
 elseif(UNIX)
 	execute_process(COMMAND "sdl2-config" "--libs" OUTPUT_VARIABLE SDLCONFIG_LIBS)
 	string(STRIP ${SDLCONFIG_LIBS} SDLCONFIG_LIBS) 
-	target_link_libraries(ThiefCatcher PUBLIC kangaroo PRIVATE ${SDLCONFIG_LIBS} sqlite3 curl SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf tinyxml2 fmt)
+	target_link_libraries(ThiefCatcher PUBLIC ${KANGOROO_LIBRARY_DIR} kangaroo PRIVATE ${SDLCONFIG_LIBS} sqlite3 curl SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf tinyxml2 fmt)
 elseif(APPLE)
 	execute_process(COMMAND "sdl2-config" "--libs" OUTPUT_VARIABLE SDLCONFIG_LIBS)
 	string(STRIP ${SDLCONFIG_LIBS} SDLCONFIG_LIBS) 
-	target_link_libraries(ThiefCatcher PUBLIC kangaroo PRIVATE ${SDLCONFIG_LIBS} sqlite3 curl SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf tinyxml2 intl)
+	target_link_libraries(ThiefCatcher PUBLIC ${KANGOROO_LIBRARY_DIR} kangaroo PRIVATE ${SDLCONFIG_LIBS} sqlite3 curl SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf tinyxml2 intl)
 endif()
 
 #set_target_properties(ThiefCatcher PROPERTIES OUTPUT_NAME "ThiefCatcher")
