@@ -36,7 +36,9 @@ configure_file(
 )
 
 set(KANGOROO_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../Kangaroo/include")
+set(KANGOROO_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../Kangaroo/src")
 message("KANGOROO_INCLUDE_DIR: ${KANGOROO_INCLUDE_DIR}")
+message("KANGOROO_SRC_DIR: ${KANGOROO_SRC_DIR}")
 
 execute_process(COMMAND "pkg-config" "--cflags" "fmt" OUTPUT_VARIABLE FMT_INCLUDE_DIR)
 message("FMT_INCLUDE_DIR: ${FMT_INCLUDE_DIR}")
@@ -47,7 +49,7 @@ set(TINYXML2_INCLUDE_DIR "/opt/homebrew/Cellar/tinyxml2/10.0.0/include")
 set(GETTEXT_INCLUDE_DIR "/opt/homebrew/Cellar/gettext/0.23.1/include")
 set(GETTEXT_LIBRARY_DIR "/opt/homebrew/Cellar/gettext/0.23.1/lib")
 
-add_executable(ThiefCatcher WIN32 MACOSX_BUNDLE ${GAME_SOURCES})
+add_executable(ThiefCatcher WIN32 MACOSX_BUNDLE ${GAME_SOURCES} ${KANGOROO_SRC_DIR})
 set_property(TARGET ThiefCatcher PROPERTY CXX_STANDARD 23)
 
 target_include_directories(ThiefCatcher PRIVATE "src/" "vendor/" "/usr/local/include/" ${CMAKE_INCLUDE_PATH} ${FMT_INCLUDE_DIR} ${TINYXML2_INCLUDE_DIR} ${GETTEXT_INCLUDE_DIR} ${KANGOROO_INCLUDE_DIR})
