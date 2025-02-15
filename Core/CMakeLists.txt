@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
 
 if(UNIX)
 	execute_process(COMMAND "sdl2-config" "--cflags" OUTPUT_VARIABLE SDLCONFIG_FLAGS)
