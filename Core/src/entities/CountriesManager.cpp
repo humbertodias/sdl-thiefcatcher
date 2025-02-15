@@ -1,5 +1,5 @@
 #include "CountriesManager.h"
-
+#include <ctime>
 #include <tinyxml2.h>
 using tinyxml2::XMLDocument;
 using tinyxml2::XMLElement;

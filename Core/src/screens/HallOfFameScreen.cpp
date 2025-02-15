@@ -4,7 +4,7 @@
 #include <FontManager.h>
 #include <MediaMusic.h>
 #include <Text.h>
-#include <fmt/base.h>
+//#include <fmt/base.h>
 #include <fmt/format.h>
 
 #include "utilities/Translator.h"
