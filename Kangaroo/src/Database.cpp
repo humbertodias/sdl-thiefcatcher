@@ -30,7 +30,7 @@ namespace Kangaroo {
 
 		va_list params;
 		va_start(params, sql);
-		vsprintf(query, sql, params);
+		vsnprintf(query, sizeof(query), sql, params);
 		va_end(params);
 
 		char *errorMessage = nullptr;
@@ -45,7 +45,7 @@ namespace Kangaroo {
 
 		va_list params;
 		va_start(params, sql);
-		vsprintf(query, sql, params);
+		vsnprintf(query, sizeof(query), sql, params);
 		va_end(params);
 
 		auto *rs = new ResultSet(handle, query);
