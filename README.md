@@ -29,7 +29,7 @@ cmake -G "Visual Studio 17 2022" .
 ### ...on Linux/Macos:
 
 ```shell
-pushd Core && conan install . && popd
+pushd Core && conan install . --build=missing && popd
 cmake .
 make
 ```

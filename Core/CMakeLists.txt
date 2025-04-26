@@ -79,12 +79,12 @@ target_include_directories(ThiefCatcher PRIVATE
 if(WIN32)
     target_link_libraries(ThiefCatcher PUBLIC ${KANGOROO_LIBRARY_DIR} kangaroo 
         PRIVATE sqlite3 curl SDL2main SDL2 SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf 
-        tinyxml2 intl)
+        tinyxml2)
 elseif(UNIX OR APPLE)
     execute_process(COMMAND "sdl2-config" "--libs" OUTPUT_VARIABLE SDLCONFIG_LIBS OUTPUT_STRIP_TRAILING_WHITESPACE)
     target_link_libraries(ThiefCatcher PUBLIC ${KANGOROO_LIBRARY_DIR} kangaroo 
         PRIVATE ${SDLCONFIG_LIBS} sqlite3 curl SDL2_image SDL2_gfx SDL2_mixer SDL2_ttf 
-        tinyxml2 fmt intl)
+        tinyxml2 fmt)
 endif()
 
 set(INSTALL_FOLDER ".")
