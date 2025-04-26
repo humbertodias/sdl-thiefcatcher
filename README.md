@@ -46,3 +46,6 @@ cmake --build build
 cd Core
 bin/ThiefCatcher
 ```
+
+![image](https://github.com/user-attachments/assets/a1a31d99-d92e-437b-a644-517675443dc7)
+
